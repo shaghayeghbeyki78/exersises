@@ -9,28 +9,6 @@
  * sumOfDigits(123) should return 6 (1 + 2 + 3).
  * sumOfDigits(987) should return 24 (9 + 8 + 7).
  */
+const sumOfDigits = n => String(n).split('').reduce((s,d)=>s+ +d,0);
 
-function sumOfDigits(num) {
-
-
-    let arrNum = Array.from(String(num))
-
-    let res = 0;
-
-    arrNum.map(function(x) {
-
-
-        let number = +x;
-
-        res += number
-
-    })
-
-    console.log(res);
-
-
-
-}
-
-sumOfDigits(987)
 module.exports = sumOfDigits;

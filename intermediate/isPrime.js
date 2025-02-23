@@ -12,31 +12,5 @@
 
 // Write your solution here
 
-function isPrime(n, x = 3) {
-    if (n < 2) {
-        return false;
-    }
-
-    while (n >= 2) {
-
-        if (n === 2) {
-            return true;
-        }
-
-        if (n > 2 && n % 2 === 0) return false;
-
-
-        if (x > Math.sqrt(n)) return true;
-
-        if (n % 3 === 0) return false;
-
-
-    }
-
-
-}
-
-
-console.log(isPrime(7));
-
+const isPrime = n => n > 1 && [...Array(Math.floor(Math.sqrt(n) - 1)).keys()].every(i => n % (i + 2) !== 0)
 module.exports = isPrime;

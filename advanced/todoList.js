@@ -13,46 +13,16 @@
  */
 
 // Write your solution here
-
-let todoList = ['learning', 'gym', 'uni']
-
-function addTask(newTask) {
-
-    if (typeof newTask == 'number') {
-        console.log('this is number , not like task');
-    } else {
-
-        todoList.push(newTask)
-    }
-    console.log(todoList);
-
-
-}
-
-function removeTask(remove) {
-
-    let indexOfTask = todoList.indexOf(remove)
-
-    if (indexOfTask != -1) {
-
-        todoList.splice(indexOfTask, 1)
-    } else {
-        console.log('task not found');
-    }
-
-    console.log(todoList);
-}
-
-function showTasks() {
-
-    console.log(todoList);
-
-
-}
-
-
-addTask('react learnning')
-removeTask('gym')
-showTasks()
-
+const todoList = [];
+const addTask = task =>
+  task && typeof task === 'string' && !todoList.includes(task)
+    ? (todoList.push(task), `${task} added to the list.`)
+    : 'Error: Task cannot be empty or already exists.';
+const removeTask = task => {
+  const taskIndex = todoList.indexOf(task);
+  return taskIndex !== -1
+    ? (todoList.splice(taskIndex, 1), `${task} removed from the list.`)
+    : 'Error: Task not found.';
+};
+const showTasks = () => [...todoList];
 module.exports = { addTask, removeTask, showTasks };

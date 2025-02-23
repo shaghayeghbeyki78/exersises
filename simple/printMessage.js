@@ -10,10 +10,5 @@
  */
 
 // Write your solution here
-function printMessage(massage) {
-    console.log(massage);
-}
-
-printMessage('Hello, world!')
-
+const printMessage = message => console.log(message);
 module.exports = printMessage;

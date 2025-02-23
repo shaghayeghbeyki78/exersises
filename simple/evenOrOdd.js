@@ -11,19 +11,5 @@
  */
 
 // Write your solution here
-
-function isEvenOrOdd(num) {
-
-    let result = num % 2;
-
-    if (result === 0) {
-        return 'Even'
-    } else {
-        return 'Odd'
-    }
-
-}
-
-console.log(isEvenOrOdd(164));
-
+const isEvenOrOdd = (i) => (i % 2 === 0 ? "Even" : "Odd");
 module.exports = isEvenOrOdd;

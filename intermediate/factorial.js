@@ -11,26 +11,6 @@
  */
 
 // Write your solution here
-
-
-
-
-function factorial(num) {
-
-    let x = 1
-    for (let i = num; i >= 1; --i) {
-
-
-
-        x = i * x;
-
-    }
-
-    return x;
-}
-
-
-console.log(factorial(5));
-
+const factorial = n => n < 0 ? undefined : (n <= 1 ? 1 : n * factorial(n - 1));
 
 module.exports = factorial;

@@ -14,54 +14,8 @@
  */
 
 // Write your solution here
-
-function add(a, b) {
-    return a + b
-}
-
-function subtract(a, b) {
-    return a - b
-}
-
-function multiply(a, b) {
-    return a * b
-}
-
-function divide(a, b) {
-
-    if (b === 0) {
-        console.log(Error);
-    }
-
-    return a / b;
-
-}
-
-function add(a, b) {
-    return a + b
-}
-
-function subtract(a, b) {
-    return a - b
-}
-
-function multiply(a, b) {
-    return a * b
-}
-
-function divide(a, b) {
-
-    if (b === 0) {
-        console.log(Error);
-    }
-
-    return a / b;
-
-}
-
-console.log(add(1, 2))
-console.log(subtract(5, 3))
-console.log(multiply(4, 3))
-console.log(divide(8, 4))
-
+const add = (a, b) => Math.abs(a + b);
+const subtract = (a, b) => Math.abs(a - b);
+const multiply = (a, b) => Math.abs(a * b);
+const divide = (a, b) => (b === 0 ? NaN : Math.abs(a / b));
 module.exports = { add, subtract, multiply, divide };

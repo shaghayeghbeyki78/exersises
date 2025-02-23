@@ -10,18 +10,6 @@
  * searchArray([1, 2, 3, 4], 3) should return true.
  * searchArray([1, 2, 3, 4], 5) should return false.
  */
-
-function searchArray(args, num) {
-
-
-    let found = args.some(function(arg) {
-        return arg === num
-    })
-
-    console.log(found);
-
-}
-
-searchArray([1, 2, 3, 4, 10, 5], 11)
+const isPalindrome = num => num >= 0 && num.toString() === num.toString().split('').reverse().join('');
 
 module.exports = searchArray;
