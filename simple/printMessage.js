@@ -14,6 +14,6 @@
 //   console.log(message);
 // }
 // behine
-const printMessage = (message  = "No message provided") => console.log(message);
+const printMessage = message => console.log(message);
 
 module.exports = printMessage;

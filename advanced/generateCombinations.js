@@ -10,26 +10,17 @@
  * generateCombinations([1, 2, 3]) should return
  * [ [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3] ].
  */
-
-function generateCombinations(array){
-    const result = []; 
-
-    const totalCombinations = Math.pow(2, array.length); 
-
-    for (let i = 1; i < totalCombinations; i++) { 
-        const combination = []; 
-
-        for (let j = 0; j < array.length; j++) { 
-            if (i & (1 << j)) { 
-                combination.push(array[j]);
-            }
+const generateCombinations = numbers => {
+    const combinations = [];
+    const generate = (currentCombination, index) => {
+        if (currentCombination.length) combinations.push([...currentCombination]);
+        for (let i = index; i < numbers.length; i++) {
+            currentCombination.push(numbers[i]);
+            generate(currentCombination, i + 1);
+            currentCombination.pop();
         }
-
-        result.push(combination);
-    }
-
-    return result;
-}
-
-
+    };
+    generate([], 0);
+    return combinations.sort((a, b) => a.length - b.length || a[0] - b[0]);
+};
 module.exports = generateCombinations;

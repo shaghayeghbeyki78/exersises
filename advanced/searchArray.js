@@ -20,10 +20,6 @@
 //     return false;
 // }
 
-function searchArray(array, num) {
-    return array.includes(num);
-}
+const searchArray = (arr, target) => arr.includes(target);
 
 module.exports = searchArray;
-
-

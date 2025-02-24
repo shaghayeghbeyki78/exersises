@@ -11,7 +11,7 @@
  */
 // function sumOfDigits(numbers){
 //     let array = numbers.toString().split('');
-//     let sum = 0; 
+//     let sum = 0;
 //     for (const element of array) {
 //         sum += parseInt(element);
 //     }
@@ -19,12 +19,6 @@
 
 // }
 
-function sumOfDigits(number) {
-    let sum = 0;
-    while (number > 0) {
-        sum += number % 10; 
-        number = Math.floor(number / 10);  
-    }
-    return sum;
-}
+const sumOfDigits = n => [...String(n)].reduce((s,d)=>s+ +d,0);
+
 module.exports = sumOfDigits;

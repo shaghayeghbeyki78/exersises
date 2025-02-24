@@ -11,18 +11,16 @@
  */
 
 // Write your solution here
-function findDuplicates(array){
-    const box = [];
-    const duplicate = [];
-
-    for (let index = 0; index < array.length; index++) {
-        if( box.includes(array[index]) && !duplicate.includes(array[index])) {
-            duplicate.push(array[index]);
+const findDuplicates = arr => {
+    const seen = new Set();
+    const duplicates = new Set();
+    for (let item of arr) {
+        if (seen.has(item)) {
+            duplicates.add(item);
         } else {
-            box.push(array[index]);
+            seen.add(item);
         }
     }
-
-    return duplicate;
-}
+    return [...duplicates];
+};
 module.exports = findDuplicates;

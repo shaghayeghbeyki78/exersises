@@ -18,29 +18,10 @@
 //     }
 //     const reverseString = numberes.toString().split('').reverse().join('');
 //     const reversedNumber = Number(reverseString);
-    
+
 //     return number === reversedNumber;
 // }
 
-
-function isPalindrome(number) {
-    if (number < 0) {
-        return false;
-    }
-
-    let original = number;
-    let reversed = 0;
-
-
-    while (number > 0) {
-        let digit = number % 10; 
-        reversed = reversed * 10 + digit; 
-        number = Math.floor(number / 10); 
-    }
-
-    return original === reversed;
-}
-
-
+const isPalindrome = num => num >= 0 && num.toString() === num.toString().split('').reverse().join('');
 
 module.exports = isPalindrome;

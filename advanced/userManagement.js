@@ -13,30 +13,9 @@
  * removeUser("Alice");
  * showUsers() should return [].
  */
-
-let userdata = [];
-function addUser(user) {
-    userdata.push(user);
-    console.log(`${user}`);
-}
-function showUsers() {
-    if (userdata.length === 0) {
-        console.log("No users found.");
-    } else {
-        userdata.forEach((user, index) => {
-            console.log(`${index + 1}. ${user}`);
-        });
-    }
-}
-function removeUser(user) {
-    const index = userdata.indexOf(user); 
-    if (index !== -1) {
-        userdata.splice(index, 1);
-        console.log(`${user} has been removed.`);
-    } else {
-        console.log(`${user} not found.`);
-    }
-}
-
+let users = new Set([]);
+const addUser = user => users.has(user) ? false : users.add(user);
+const removeUser = user => users.has(user) ? users.delete(user) : false ;
+const showUsers = () => [...users];
 
 module.exports = { addUser, removeUser, showUsers };
