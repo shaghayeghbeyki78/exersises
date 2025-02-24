@@ -13,21 +13,25 @@
  * - If the current time is 2:15:45 PM, the digital clock should display "14:15:45".
  * - The time display should automatically update every second without refreshing the browser.
  *
- * Note:
+ *const digitalClock = () => {
+    const clockElement = document.getElementById("clock");
+    const updateClock = () => {
+        const now = new Date();
+        clockElement.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    };
+    updateClock();
+    setInterval(updateClock, 1000);
+}; Note:
  * This exercise involves DOM manipulation. Ensure you have an HTML file with a container element
  * (e.g., `<div id="clock"></div>`) to display the clock.
  */
-
-
-function digitalClock() {
-    const now = new Date();
-    
-    let hours = now.getHours().toString().padStart(2, "0");
-    let minutes = now.getMinutes().toString().padStart(2, "0");
-    let seconds = now.getSeconds().toString().padStart(2, "0");
-
-    const timeString = `${hours}:${minutes}:${seconds}`;
-    
-    document.getElementById("clock").textContent = timeString;
-}
+const digitalClock = () => {
+    const clockElement = document.getElementById("clock");
+    const updateClock = () => {
+        const now = new Date();
+        clockElement.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    };
+    updateClock();
+    setInterval(updateClock, 1000);
+};
 module.exports = digitalClock;

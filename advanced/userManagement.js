@@ -14,23 +14,8 @@
  * showUsers() should return [].
  */
 
-let users = [];   
-
- 
-function addUser(name) {
-    if (!users.includes(name)) {  
-        users.push(name);
-    }
-}
-
-    
-function removeUser(name) {
-    users = users.filter(user => user !== name);  
-}
-
-  
-function showUsers() {
-    return users;
-}
-
+let users = new Set([]);
+const addUser = user => users.has(user) ? false : users.add(user);
+const removeUser = user => users.has(user) ? users.delete(user) : false ;
+const showUsers = () => [...users];
 module.exports = { addUser, removeUser, showUsers };

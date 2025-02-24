@@ -11,9 +11,6 @@
  */
 
 // Write your solution here
+const factorial = n => n < 0 ? undefined : (n <= 1 ? 1 : n * factorial(n - 1));
 
-function factorial(n) {
-    if (n === 0) return 1; 
-    return n * factorial(n - 1); 
-}
 module.exports = factorial;

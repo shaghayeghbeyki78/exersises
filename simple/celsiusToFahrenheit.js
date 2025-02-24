@@ -12,8 +12,6 @@
 
 // Write your solution here
 
-function celsiusToFahrenheit(celsius){
-    return (celsius * 9/5) + 32 ;
-}
+const celsiusToFahrenheit = (celsius) => (celsius * 1.8) + 32;
 
 module.exports = celsiusToFahrenheit;

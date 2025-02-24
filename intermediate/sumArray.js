@@ -11,12 +11,6 @@
  */
 
 // Write your solution here
+const isPrime = n => n > 1 && [...Array(Math.floor(Math.sqrt(n) - 1)).keys()].every(i => n % (i + 2) !== 0);
 
-function sumArray(numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
-    }
-    return sum;
-}
 module.exports = sumArray;

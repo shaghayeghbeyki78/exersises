@@ -12,12 +12,6 @@
 
 // Write your solution here
 
-function isPrime(n) {
-    if (n < 2 ) return false;
+const isPrime = n => n > 1 && [...Array(Math.floor(Math.sqrt(n) - 1)).keys()].every(i => n % (i + 2) !== 0);
 
-    for(let i = 2; i < n; i++) {
-        if (n % i === 0) return false;
-    }
-    return true;
-}
 module.exports = isPrime;

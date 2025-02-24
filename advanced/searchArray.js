@@ -11,7 +11,6 @@
  * searchArray([1, 2, 3, 4], 5) should return false.
  */
 
-function searchArray(arr, target) {
-    return arr.includes(target); 
-}
+const searchArray = (arr, target) => arr.includes(target);
+
 module.exports = searchArray;
