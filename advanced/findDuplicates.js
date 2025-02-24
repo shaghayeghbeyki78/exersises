@@ -13,6 +13,16 @@
 // Write your solution here
 const findDuplicates = arr => {  
     const seen = new Set();  
-    return arr.filter(item => (seen.has(item) ? false : seen.add(item) || false)).filter((item, index) => arr.indexOf(item) !== index);  
+    const duplicates = new Set();
+    for (let item of arr) {
+        if (seen.has(item)) {
+            duplicates.add(item);
+        } else {
+            seen.add(item);
+        }
+    }
+    return [...duplicates];
 };
+
+
 module.exports = findDuplicates;
