@@ -11,105 +11,22 @@
  */
 
 // Write your solution here
-function numberToWords(num) {
-  const ones = [
-    "",
-    "One",
-    "Two",
-    "Three",
-    "Four",
-    "Five",
-    "Six",
-    "Seven",
-    "Eight",
-    "Nine",
-  ];
-  const teens = [
-    "Ten",
-    "Eleven",
-    "Twelve",
-    "Thirteen",
-    "Fourteen",
-    "Fifteen",
-    "Sixteen",
-    "Seventeen",
-    "Eighteen",
-    "Nineteen",
-  ];
-  const tens = [
-    "",
-    "",
-    "Twenty",
-    "Thirty",
-    "Forty",
-    "Fifty",
-    "Sixty",
-    "Seventy",
-    "Eighty",
-    "Ninety",
-  ];
-  const thousands = ["", "thousand", "million", "billion", "trillion"];
-
-  if (num === 0) return "zero";
-
-  let result = "";
-
-  let i = 0;
-
-  while (num > 0) {
-    if (num % 1000 !== 0) {
-      result = helper(num % 1000) + thousands[i] + " " + result;
+const numberToWords = num => {
+    if (num === 0) return 'zero';
+    const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    const hundreds = ['', 'one hundred', 'two hundred', 'three hundred', 'four hundred', 'five hundred', 'six hundred', 'seven hundred', 'eight hundred', 'nine hundred'];
+    let word = '';
+    const hundred = Math.floor(num / 100);
+    if (hundred) word += hundreds[hundred] + ' ';
+    num %= 100;
+    if (num >= 20) {
+        word += tens[Math.floor(num / 10)] + ' ';
+        num %= 10;
+    } else if (num >= 10) {
+        return word + teens[num - 10];
     }
-    num = Math.floor(num / 1000);
-    i++;
-  }
-
-  return result.trim();
-}
-
-function helper(num) {
-  const ones = [
-    "",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-  ];
-  const teens = [
-    "ten",
-    "eleven",
-    "twelve",
-    "thirteen",
-    "fourteen",
-    "fifteen",
-    "sixteen",
-    "seventeen",
-    "eighteen",
-    "nineteen",
-  ];
-  const tens = [
-    "",
-    "",
-    "twenty",
-    "thirty",
-    "forty",
-    "fifty",
-    "sixty",
-    "seventy",
-    "eighty",
-    "ninety",
-  ];
-
-  if (num === 0) return "";
-  if (num < 10) return ones[num] + " ";
-  if (num < 20) return teens[num - 10] + " ";
-  if (num < 100) return tens[Math.floor(num / 10)] + " " + ones[num % 10] + " ";
-  return ones[Math.floor(num / 100)] + " hundred " + helper(num % 100);
-}
-
+    return word + ones[num].trim();
+};
 module.exports = numberToWords;

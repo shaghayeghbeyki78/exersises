@@ -14,9 +14,8 @@
  */
 
 // Write your solution here
-let add = (a, b) => a + b;
-let subtract = (a, b) => a - b;
-let multiply = (a, b) => a * b;
-let divide = (a, b) => b === 0 ? NaN : a / b;
-
+const add = (a, b) => Math.abs(a + b);
+const subtract = (a, b) => Math.abs(a - b);
+const multiply = (a, b) => Math.abs(a * b);
+const divide = (a, b) => (b === 0 ? NaN : Math.abs(a / b));
 module.exports = { add, subtract, multiply, divide };

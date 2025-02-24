@@ -13,14 +13,8 @@
  */
 
 // Write your solution here
-let tasks = [];
-function addTask(task) {
-  tasks.push(task);
-}
-function removeTask(task) {
-  tasks = tasks.filter((t) => t !== task);
-}
-function showTasks() {
-  return tasks;
-}
+const todoList = new Set([]);
+const addTask = (task) => todoList.has(task) ? false : todoList.add(task) ;
+const removeTask = task => todoList.has(task) ? todoList.delete(task) : false ;
+const showTasks = () => [...todoList];
 module.exports = { addTask, removeTask, showTasks };

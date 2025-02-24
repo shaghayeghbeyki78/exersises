@@ -9,7 +9,6 @@
  * calculateAverage([1, 2, 3, 4]) should return 2.5.
  * calculateAverage([10, 20, 30]) should return 20.
  */
-function calculateAverage(arr) {
-  return arr.reduce((prev, curr) => prev + curr, 0) / arr.length;
-}
+const calculateAverage = numbers => numbers.reduce((sum, num) => sum + num, 0) / numbers.length;
+
 module.exports = calculateAverage;
